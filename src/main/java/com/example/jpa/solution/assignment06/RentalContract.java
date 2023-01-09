@@ -9,10 +9,28 @@ public class RentalContract {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     private Integer id;
-    private transient Customer3 customer;
-    private transient Car3 car3;
+
+    @ManyToOne
+    @JoinColumn(name = "customer3_id", nullable = false) // owning side
+    private Customer3 customer3;
+
+    @ManyToOne
+    @JoinColumn(name = "car3_id", nullable = false) // owning side
+    private Car3 car3;
+    @Column(name = "contract_start_date")
     private Integer startDate;
+    @Column(name = "contract_end_date")
     private Integer endDate;
+
+    public RentalContract(Customer3 customer3, Car3 car3, Integer startDate, Integer endDate) {
+        this.customer3 = customer3;
+        this.car3 = car3;
+        this.startDate = startDate;
+        this.endDate = endDate;
+    }
+
+    public RentalContract() {
+    }
 
     public Integer getId() {
         return id;
@@ -22,12 +40,20 @@ public class RentalContract {
         this.id = id;
     }
 
-    public Customer3 getCustomer() {
-        return customer;
+    public Customer3 getCustomer3() {
+        return customer3;
     }
 
-    public void setCustomer(final Customer3 customer) {
-        this.customer = customer;
+    public void setCustomer3(Customer3 customer3) {
+        this.customer3 = customer3;
+    }
+
+    public Car3 getCar3() {
+        return car3;
+    }
+
+    public void setCar3(Car3 car3) {
+        this.car3 = car3;
     }
 
     public Car3 getCar() {
@@ -55,26 +81,13 @@ public class RentalContract {
     }
 
     @Override
-    public boolean equals(final Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        final RentalContract that = (RentalContract) o;
-
-        if (!Objects.equals(id, that.id)) return false;
-        if (!Objects.equals(customer, that.customer)) return false;
-        if (!Objects.equals(car3, that.car3)) return false;
-        if (!Objects.equals(startDate, that.startDate)) return false;
-        return Objects.equals(endDate, that.endDate);
-    }
-
-    @Override
-    public int hashCode() {
-        int result = id != null ? id.hashCode() : 0;
-        result = 31 * result + (customer != null ? customer.hashCode() : 0);
-        result = 31 * result + (car3 != null ? car3.hashCode() : 0);
-        result = 31 * result + (startDate != null ? startDate.hashCode() : 0);
-        result = 31 * result + (endDate != null ? endDate.hashCode() : 0);
-        return result;
+    public String toString() {
+        return "RentalContract{" +
+                "id=" + id +
+                ", customer3=" + customer3 +
+                ", car3=" + car3 +
+                ", startDate=" + startDate +
+                ", endDate=" + endDate +
+                '}';
     }
 }

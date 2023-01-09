@@ -1,10 +1,8 @@
 package com.example.jpa.solution.assignment06;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import java.util.Objects;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Customer3 {
@@ -12,6 +10,16 @@ public class Customer3 {
     @Id
     private Integer id;
     private String name;
+
+    @OneToMany(mappedBy = "customer3")
+    private List<RentalContract> rentalContractList = new ArrayList<>();
+
+    public Customer3(String name) {
+        this.name = name;
+    }
+
+    public Customer3() {
+    }
 
     public Integer getId() {
         return id;
@@ -29,21 +37,19 @@ public class Customer3 {
         this.name = name;
     }
 
-    @Override
-    public boolean equals(final Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+    public List<RentalContract> getRentalContractList() {
+        return rentalContractList;
+    }
 
-        final Customer3 customer = (Customer3) o;
-
-        if (!Objects.equals(id, customer.id)) return false;
-        return Objects.equals(name, customer.name);
+    public void setRentalContractList(List<RentalContract> rentalContractList) {
+        this.rentalContractList = rentalContractList;
     }
 
     @Override
-    public int hashCode() {
-        int result = id != null ? id.hashCode() : 0;
-        result = 31 * result + (name != null ? name.hashCode() : 0);
-        return result;
+    public String toString() {
+        return "Customer3{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                '}';
     }
 }

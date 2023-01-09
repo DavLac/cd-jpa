@@ -22,8 +22,19 @@ public class Car {
     @Column(name = "value")
     private Integer value;
     @Basic
-    @Column(name = "lastCleaned")
+    @Column(name = "last_cleaned")
     private Long lastCleaned;
+
+    public Car(String make, String model, Integer mileage, Integer value, Long lastCleaned) {
+        this.make = make;
+        this.model = model;
+        this.mileage = mileage;
+        this.value = value;
+        this.lastCleaned = lastCleaned;
+    }
+
+    public Car() {
+    }
 
     public Integer getId() {
         return id;
@@ -97,5 +108,17 @@ public class Car {
         result = 31 * result + (value != null ? value.hashCode() : 0);
         result = 31 * result + (lastCleaned != null ? lastCleaned.hashCode() : 0);
         return result;
+    }
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "id=" + id +
+                ", make='" + make + '\'' +
+                ", model='" + model + '\'' +
+                ", mileage=" + mileage +
+                ", value=" + value +
+                ", lastCleaned=" + lastCleaned +
+                '}';
     }
 }

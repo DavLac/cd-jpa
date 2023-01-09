@@ -11,6 +11,17 @@ public class Customer2 {
     private String name;
     private Integer age;
 
+    @Transient
+    private String customField;
+
+    public Customer2() {
+    }
+
+    public Customer2(String name, Integer age) {
+        this.name = name;
+        this.age = age;
+    }
+
     public Integer getId() {
         return id;
     }
@@ -35,24 +46,12 @@ public class Customer2 {
         this.age = age;
     }
 
-    @Override
-    public boolean equals(final Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        final Customer2 customer = (Customer2) o;
-
-        if (!Objects.equals(id, customer.id)) return false;
-        if (!Objects.equals(name, customer.name)) return false;
-        return Objects.equals(age, customer.age);
+    public String getCustomField() {
+        return customField;
     }
 
-    @Override
-    public int hashCode() {
-        int result = id != null ? id.hashCode() : 0;
-        result = 31 * result + (name != null ? name.hashCode() : 0);
-        result = 31 * result + (age != null ? age.hashCode() : 0);
-        return result;
+    public void setCustomField(String customField) {
+        this.customField = customField;
     }
 
     @Override
@@ -61,6 +60,7 @@ public class Customer2 {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", age=" + age +
+                ", customField='" + customField + '\'' +
                 '}';
     }
 }

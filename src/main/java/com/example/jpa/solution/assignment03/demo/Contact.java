@@ -1,4 +1,4 @@
-package com.example.jpa.solution.assignment03;
+package com.example.jpa.solution.assignment03.demo;
 
 import javax.persistence.*;
 
@@ -54,5 +54,16 @@ public class Contact {
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    @Override
+    public String toString() {
+        return "Contact{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", address='" + address + '\'' +
+                ", phone='" + phone + '\'' +
+                '}';
     }
 }

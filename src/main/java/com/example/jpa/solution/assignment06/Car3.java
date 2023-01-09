@@ -1,10 +1,8 @@
 package com.example.jpa.solution.assignment06;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import java.util.Objects;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Car3 {
@@ -15,7 +13,22 @@ public class Car3 {
     private String model;
     private Integer mileage;
     private Integer value;
-    private Integer lastCleaned;
+    @Column(name = "last_cleaned")
+    private Long lastCleaned;
+
+    @OneToMany(mappedBy = "car3")
+    private List<RentalContract> rentalContractList = new ArrayList<>();
+
+    public Car3(String make, String model, Integer mileage, Integer value, Long lastCleaned) {
+        this.make = make;
+        this.model = model;
+        this.mileage = mileage;
+        this.value = value;
+        this.lastCleaned = lastCleaned;
+    }
+
+    public Car3() {
+    }
 
     public Integer getId() {
         return id;
@@ -57,37 +70,31 @@ public class Car3 {
         this.value = value;
     }
 
-    public Integer getLastCleaned() {
+    public Long getLastCleaned() {
         return lastCleaned;
     }
 
-    public void setLastCleaned(final Integer lastCleaned) {
+    public void setLastCleaned(final Long lastCleaned) {
         this.lastCleaned = lastCleaned;
     }
 
-    @Override
-    public boolean equals(final Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+    public List<RentalContract> getRentalContractList() {
+        return rentalContractList;
+    }
 
-        final Car3 car = (Car3) o;
-
-        if (!Objects.equals(id, car.id)) return false;
-        if (!Objects.equals(make, car.make)) return false;
-        if (!Objects.equals(model, car.model)) return false;
-        if (!Objects.equals(mileage, car.mileage)) return false;
-        if (!Objects.equals(value, car.value)) return false;
-        return Objects.equals(lastCleaned, car.lastCleaned);
+    public void setRentalContractList(List<RentalContract> rentalContractList) {
+        this.rentalContractList = rentalContractList;
     }
 
     @Override
-    public int hashCode() {
-        int result = id != null ? id.hashCode() : 0;
-        result = 31 * result + (make != null ? make.hashCode() : 0);
-        result = 31 * result + (model != null ? model.hashCode() : 0);
-        result = 31 * result + (mileage != null ? mileage.hashCode() : 0);
-        result = 31 * result + (value != null ? value.hashCode() : 0);
-        result = 31 * result + (lastCleaned != null ? lastCleaned.hashCode() : 0);
-        return result;
+    public String toString() {
+        return "Car3{" +
+                "id=" + id +
+                ", make='" + make + '\'' +
+                ", model='" + model + '\'' +
+                ", mileage=" + mileage +
+                ", value=" + value +
+                ", lastCleaned=" + lastCleaned +
+                '}';
     }
 }
