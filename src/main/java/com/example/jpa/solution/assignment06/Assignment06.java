@@ -29,24 +29,7 @@ public class Assignment06 {
             new Customer3("gabriel")
     );
 
-    public void persistNewEntities() {
-        entityManager.getTransaction().begin();
-        entityList.forEach(entityManager::persist);
-        customerList.forEach(entityManager::persist);
-        entityManager.getTransaction().commit();
-
-        entityManager.getTransaction().begin();
-        System.out.println(getCustomerById(1));
-        System.out.println(getCarById(1));
-        var rentalContract = List.of(
-                new RentalContract(getCustomerById(1), getCarById(1), 1, 2)
-        );
-
-        rentalContract.forEach(entityManager::persist);
-        entityManager.getTransaction().commit();
-    }
-
-    public Car3 getCarById(final Integer id) {
+    private Car3 getCarById(final Integer id) {
         final var query = entityManager.createQuery("SELECT c FROM Car3 c WHERE c.id = :id", Car3.class);
 
         Car3 response = query
@@ -56,7 +39,7 @@ public class Assignment06 {
         return response;
     }
 
-    public Customer3 getCustomerById(final Integer id) {
+    private Customer3 getCustomerById(final Integer id) {
         final var query = entityManager.createQuery("SELECT c FROM Customer3 c WHERE c.id = :id", Customer3.class);
 
         Customer3 response = query
@@ -64,6 +47,21 @@ public class Assignment06 {
                 .getSingleResult();
         entityManager.refresh(response);
         return response;
+    }
+
+    public void persistNewEntities() {
+        entityManager.getTransaction().begin();
+        entityList.forEach(entityManager::persist);
+        customerList.forEach(entityManager::persist);
+
+        System.out.println(getCustomerById(1));
+        System.out.println(getCarById(1));
+        var rentalContract = List.of(
+                new RentalContract(getCustomerById(1), getCarById(1), 1, 2)
+        );
+
+        rentalContract.forEach(entityManager::persist);
+        entityManager.getTransaction().commit();
     }
 
     public List<RentalContract> findAllRentalContracts() {

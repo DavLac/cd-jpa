@@ -91,6 +91,7 @@
         <class>com.example.jpa.solution.assignment08.Car5</class>
         <class>com.example.jpa.solution.assignment08.Customer5</class>
         <class>com.example.jpa.solution.assignment08.RentalContract2</class>
+        <class>com.example.jpa.solution.assignment08.demo.Customr</class>
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
         <properties>
             <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>

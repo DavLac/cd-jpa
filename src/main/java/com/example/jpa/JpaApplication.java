@@ -5,6 +5,8 @@ import com.example.jpa.solution.assignment04.Assignment04;
 import com.example.jpa.solution.assignment05.Assignment05;
 import com.example.jpa.solution.assignment06.Assignment06;
 import com.example.jpa.solution.assignment07.Assignment07;
+import com.example.jpa.solution.assignment08.Assignment08;
+import com.example.jpa.solution.assignment08.demo.Assignment08Demo;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -85,6 +87,28 @@ public class JpaApplication {
         System.out.println("===========================");
         System.out.println("Private customers");
         as07.findAllPrivateCustomers().forEach(System.out::println);
+
+        System.out.println("===========================");
+        System.out.println("Assignment 08 demo");
+        var as08d = new Assignment08Demo();
+        as08d.persistNewEntities();
+        System.out.println("===========================");
+        System.out.println("findCustomerByName");
+        System.out.println(as08d.findCustomerByName("Name"));
+
+        System.out.println("===========================");
+        System.out.println("Assignment 08");
+        var as08 = new Assignment08();
+        as08.persistNewEntities();
+        System.out.println("===========================");
+        System.out.println("findAllContractsFromPeopleFromUtrecht");
+        as08.findAllContractsFromPeopleFromUtrecht().forEach(System.out::println);
+        System.out.println("===========================");
+        System.out.println("findAllPeopleThatRentedFordCars");
+        as08.findAllPeopleThatRentedFordCars().forEach(System.out::println);
+        System.out.println("===========================");
+        System.out.println("findAllPeopleThatRentedAtLeastTwoDifferentCars");
+        as08.findAllPeopleThatRentedAtLeastTwoDifferentCars().forEach(System.out::println);
     }
 
 }
