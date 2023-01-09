@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1"
+             xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
+	http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+
+    <persistence-unit name="assignment-02">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <class>com.example.jpa.solution.assignment02.Customer</class>
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
+        <properties>
+            <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
+        </properties>
+    </persistence-unit>
+    <persistence-unit name="assignment-03">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <class>com.example.jpa.solution.assignment03.Customer2</class>
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
+        <properties>
+            <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQL95Dialect"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/demo" /> <!-- BD Mane -->
+            <property name="javax.persistence.jdbc.user" value="postgres" /> <!-- DB User -->
+            <property name="javax.persistence.jdbc.password" value="password" /> <!-- DB Password -->
+        </properties>
+    </persistence-unit>
+    <persistence-unit name="assignment-04">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <class>com.example.jpa.solution.assignment04.Car</class>
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
+        <properties>
+            <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQL95Dialect"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/demo" /> <!-- BD Mane -->
+            <property name="javax.persistence.jdbc.user" value="postgres" /> <!-- DB User -->
+            <property name="javax.persistence.jdbc.password" value="password" /> <!-- DB Password -->
+        </properties>
+    </persistence-unit>
+    <persistence-unit name="assignment-05">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <class>com.example.jpa.solution.assignment05.Car</class>
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
+        <properties>
+            <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQL95Dialect"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/demo" /> <!-- BD Mane -->
+            <property name="javax.persistence.jdbc.user" value="postgres" /> <!-- DB User -->
+            <property name="javax.persistence.jdbc.password" value="password" /> <!-- DB Password -->
+        </properties>
+    </persistence-unit>
+    <persistence-unit name="assignment-06">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <class>com.example.jpa.solution.assignment06.Car</class>
+        <class>com.example.jpa.solution.assignment06.Customer</class>
+        <class>com.example.jpa.solution.assignment06.RentalContract</class>
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
+        <properties>
+            <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQL95Dialect"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/demo" /> <!-- BD Mane -->
+            <property name="javax.persistence.jdbc.user" value="postgres" /> <!-- DB User -->
+            <property name="javax.persistence.jdbc.password" value="password" /> <!-- DB Password -->
+        </properties>
+    </persistence-unit>
+    <persistence-unit name="assignment-07">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <class>com.example.jpa.solution.assignment07.Customer</class>
+        <class>com.example.jpa.solution.assignment07.PrivateCustomer</class>
+        <class>com.example.jpa.solution.assignment07.CompanyCustomer</class>
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
+        <properties>
+            <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQL95Dialect"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/demo" /> <!-- BD Mane -->
+            <property name="javax.persistence.jdbc.user" value="postgres" /> <!-- DB User -->
+            <property name="javax.persistence.jdbc.password" value="password" /> <!-- DB Password -->
+        </properties>
+    </persistence-unit>
+    <persistence-unit name="assignment-08">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <class>com.example.jpa.solution.assignment08.Car</class>
+        <class>com.example.jpa.solution.assignment08.Customer</class>
+        <class>com.example.jpa.solution.assignment08.RentalContract</class>
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
+        <properties>
+            <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQL95Dialect"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/demo" /> <!-- BD Mane -->
+            <property name="javax.persistence.jdbc.user" value="postgres" /> <!-- DB User -->
+            <property name="javax.persistence.jdbc.password" value="password" /> <!-- DB Password -->
+        </properties>
+    </persistence-unit>
+    <persistence-unit name="assignment-09">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <class>com.example.jpa.solution.assignment09.Car</class>
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
+        <properties>
+            <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQL95Dialect"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/demo" /> <!-- BD Mane -->
+            <property name="javax.persistence.jdbc.user" value="postgres" /> <!-- DB User -->
+            <property name="javax.persistence.jdbc.password" value="password" /> <!-- DB Password -->
+        </properties>
+    </persistence-unit>
+
+
+</persistence>

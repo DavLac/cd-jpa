@@ -1,6 +1,8 @@
 package com.example.jpa.solution.assignment05;
 
 import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 import java.util.List;
 
 /**
@@ -9,14 +11,13 @@ import java.util.List;
  **/
 public class Assignment05 {
 
-    private final EntityManager entityManager;
-
-    public Assignment05(final EntityManager entityManager) {
-        this.entityManager = entityManager;
-    }
+    private static final EntityManagerFactory entityManagerFactory = Persistence
+            .createEntityManagerFactory("assignment-05");
+    private static final EntityManager entityManager = entityManagerFactory
+            .createEntityManager();
 
     public List<Car2> findAll() {
-        final var query = entityManager.createQuery("SELECT c FROM nl.yoink.courses.dev.java.jpa.assignments.assignment05.Car2 c", Car2.class);
+        final var query = entityManager.createQuery("SELECT c FROM Car2 c", Car2.class);
 
         return query.getResultList();
     }

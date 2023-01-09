@@ -16,7 +16,7 @@ public class Assignment03 {
             .createEntityManager();
 
     public List<Customer2> findAll() {
-        final var query = entityManager.createQuery("<ADD YOUR OWN QUERY HERE>", Customer2.class);
+        final var query = entityManager.createQuery("SELECT c FROM Customer2 c", Customer2.class);
 
         return query.getResultList();
     }

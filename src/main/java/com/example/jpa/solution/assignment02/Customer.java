@@ -8,10 +8,15 @@ import java.util.Objects;
  * Add correct JPA entity annotations to Customer class
  **/
 
+@Entity
+@Table(name = "CUSTOMERS")
 public class Customer {
 
+    @Id
+    @GeneratedValue
+    @Column(name = "id")
     private int id;
-
+    @Column(name = "name")
     private String name;
 
     public int getId() {

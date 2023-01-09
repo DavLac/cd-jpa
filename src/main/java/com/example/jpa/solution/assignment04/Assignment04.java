@@ -1,6 +1,8 @@
 package com.example.jpa.solution.assignment04;
 
 import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 
 /**
  * Assignment 04: UPDATE queries
@@ -8,14 +10,13 @@ import javax.persistence.EntityManager;
  **/
 public class Assignment04 {
 
-    private final EntityManager entityManager;
-
-    public Assignment04(final EntityManager entityManager) {
-        this.entityManager = entityManager;
-    }
+    private static final EntityManagerFactory entityManagerFactory = Persistence
+            .createEntityManagerFactory("assignment-04");
+    private static final EntityManager entityManager = entityManagerFactory
+            .createEntityManager();
 
     public Car getById(final Integer id) {
-        final var query = entityManager.createQuery("SELECT c FROM nl.yoink.courses.dev.java.jpa.assignments.assignment04.Car c WHERE c.id = :id", Car.class);
+        final var query = entityManager.createQuery("SELECT c FROM Car c WHERE c.id = :id", Car.class);
 
         return query
                 .setParameter("id", id)

@@ -54,4 +54,13 @@ public class Customer2 {
         result = 31 * result + (age != null ? age.hashCode() : 0);
         return result;
     }
+
+    @Override
+    public String toString() {
+        return "Customer2{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                '}';
+    }
 }
