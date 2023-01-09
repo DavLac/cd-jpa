@@ -1,8 +1,12 @@
 spring:
   jpa:
+    show-sql: true
     hibernate:
       ddl-auto: update
   datasource:
     url: "jdbc:postgresql://localhost:5432/demo"
     username: postgres
     password: password
+  properties:
+    hibernate:
+      format_sql: true
