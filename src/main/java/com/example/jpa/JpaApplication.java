@@ -11,5 +11,5 @@ public class JpaApplication {
 		SpringApplication.run(JpaApplication.class, args);
 		var assignment = new Assignment03();
 	}
-
+	//simple change
 }

@@ -22,7 +22,7 @@
             <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQL95Dialect"/>
             <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/demo" /> <!-- BD Mane -->
             <property name="javax.persistence.jdbc.user" value="postgres" /> <!-- DB User -->
-            <property name="javax.persistence.jdbc.password" value="password" /> <!-- DB Password -->
+            <property name="javax.persistence.jdbc.password" value="postgres" /> <!-- DB Password -->
         </properties>
     </persistence-unit>
     <persistence-unit name="assignment-04">
@@ -34,7 +34,7 @@
             <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQL95Dialect"/>
             <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/demo" /> <!-- BD Mane -->
             <property name="javax.persistence.jdbc.user" value="postgres" /> <!-- DB User -->
-            <property name="javax.persistence.jdbc.password" value="password" /> <!-- DB Password -->
+            <property name="javax.persistence.jdbc.password" value="postgres" /> <!-- DB Password -->
         </properties>
     </persistence-unit>
     <persistence-unit name="assignment-05">
@@ -46,7 +46,7 @@
             <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQL95Dialect"/>
             <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/demo" /> <!-- BD Mane -->
             <property name="javax.persistence.jdbc.user" value="postgres" /> <!-- DB User -->
-            <property name="javax.persistence.jdbc.password" value="password" /> <!-- DB Password -->
+            <property name="javax.persistence.jdbc.password" value="postgres" /> <!-- DB Password -->
         </properties>
     </persistence-unit>
     <persistence-unit name="assignment-06">
@@ -60,7 +60,7 @@
             <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQL95Dialect"/>
             <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/demo" /> <!-- BD Mane -->
             <property name="javax.persistence.jdbc.user" value="postgres" /> <!-- DB User -->
-            <property name="javax.persistence.jdbc.password" value="password" /> <!-- DB Password -->
+            <property name="javax.persistence.jdbc.password" value="postgres" /> <!-- DB Password -->
         </properties>
     </persistence-unit>
     <persistence-unit name="assignment-07">
@@ -74,7 +74,7 @@
             <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQL95Dialect"/>
             <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/demo" /> <!-- BD Mane -->
             <property name="javax.persistence.jdbc.user" value="postgres" /> <!-- DB User -->
-            <property name="javax.persistence.jdbc.password" value="password" /> <!-- DB Password -->
+            <property name="javax.persistence.jdbc.password" value="postgres" /> <!-- DB Password -->
         </properties>
     </persistence-unit>
     <persistence-unit name="assignment-08">
@@ -88,7 +88,7 @@
             <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQL95Dialect"/>
             <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/demo" /> <!-- BD Mane -->
             <property name="javax.persistence.jdbc.user" value="postgres" /> <!-- DB User -->
-            <property name="javax.persistence.jdbc.password" value="password" /> <!-- DB Password -->
+            <property name="javax.persistence.jdbc.password" value="postgres" /> <!-- DB Password -->
         </properties>
     </persistence-unit>
     <persistence-unit name="assignment-09">
@@ -100,7 +100,7 @@
             <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQL95Dialect"/>
             <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/demo" /> <!-- BD Mane -->
             <property name="javax.persistence.jdbc.user" value="postgres" /> <!-- DB User -->
-            <property name="javax.persistence.jdbc.password" value="password" /> <!-- DB Password -->
+            <property name="javax.persistence.jdbc.password" value="postgres" /> <!-- DB Password -->
         </properties>
     </persistence-unit>
 
