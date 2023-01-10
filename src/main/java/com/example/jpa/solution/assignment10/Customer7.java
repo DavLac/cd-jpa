@@ -40,16 +40,4 @@ public class Customer7 {
         this.email = email;
     }
 
-    @Override
-    public boolean equals(final Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        final Customer7 customer = (Customer7) o;
-        return age == customer.age && Objects.equals(id, customer.id) && Objects.equals(name, customer.name) && Objects.equals(email, customer.email);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, name, age, email);
-    }
 }
