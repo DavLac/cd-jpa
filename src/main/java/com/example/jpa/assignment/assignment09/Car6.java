@@ -4,6 +4,7 @@ import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
+@EntityListeners(DatabaseEventListener.class)
 public class Car6 {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
@@ -22,8 +23,19 @@ public class Car6 {
     @Column(name = "value")
     private Integer value;
     @Basic
-    @Column(name = "lastCleaned")
+    @Column(name = "lastcleaned")
     private Long lastCleaned;
+
+    public Car6() {
+    }
+
+    public Car6(String make, String model, Integer mileage, Integer value, Long lastCleaned) {
+        this.make = make;
+        this.model = model;
+        this.mileage = mileage;
+        this.value = value;
+        this.lastCleaned = lastCleaned;
+    }
 
     public Integer getId() {
         return id;
@@ -97,5 +109,17 @@ public class Car6 {
         result = 31 * result + (value != null ? value.hashCode() : 0);
         result = 31 * result + (lastCleaned != null ? lastCleaned.hashCode() : 0);
         return result;
+    }
+
+    @Override
+    public String toString() {
+        return "Car6{" +
+                "id=" + id +
+                ", make='" + make + '\'' +
+                ", model='" + model + '\'' +
+                ", mileage=" + mileage +
+                ", value=" + value +
+                ", lastCleaned=" + lastCleaned +
+                '}';
     }
 }

@@ -1,12 +1,12 @@
 package com.example.jpa.assignment.assignment08;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import lombok.ToString;
+
+import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
+@ToString
 public class Car5 {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
@@ -15,7 +15,19 @@ public class Car5 {
     private String model;
     private Integer mileage;
     private Integer value;
+    @Column(name = "last_cleaned")
     private Integer lastCleaned;
+
+    public Car5(String make, String model, Integer mileage, Integer value, Integer lastCleaned) {
+        this.make = make;
+        this.model = model;
+        this.mileage = mileage;
+        this.value = value;
+        this.lastCleaned = lastCleaned;
+    }
+
+    public Car5() {
+    }
 
     public Integer getId() {
         return id;

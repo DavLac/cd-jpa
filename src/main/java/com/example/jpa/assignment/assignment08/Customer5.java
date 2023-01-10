@@ -1,18 +1,37 @@
 package com.example.jpa.assignment.assignment08;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import lombok.ToString;
+
+import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
+@ToString
+@NamedQuery(name = "Customer5.findByRentedCarMake" , query =    "SELECT cus " +
+                                                                "FROM Customer5 cus " +
+                                                                "JOIN RentalContract2 AS rc ON cus.id = rc.customer " +
+                                                                "JOIN Car5 AS car ON rc.car = car.id " +
+                                                                "WHERE make = ?1")
+@NamedQuery(name = "Customer5.findAllPeopleThatRentedAtLeastXDifferentCars" , query =   "SELECT cus " +
+                                                                                        "FROM Customer5 cus " +
+                                                                                        "JOIN RentalContract2 AS rc ON cus.id = rc.customer " +
+                                                                                        "GROUP BY cus " +
+                                                                                        "HAVING COUNT(DISTINCT rc.car) >= ?1")
+
 public class Customer5 {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     private Integer id;
     private String name;
     private String address;
+
+    public Customer5() {
+    }
+
+    public Customer5(String name, String address) {
+        this.name = name;
+        this.address = address;
+    }
 
     public Integer getId() {
         return id;

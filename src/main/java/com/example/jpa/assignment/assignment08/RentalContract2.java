@@ -1,10 +1,17 @@
 package com.example.jpa.assignment.assignment08;
 
+import lombok.ToString;
+
 import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
-@Table(name = "rental_contract")
+@Table(name = "rental_contract2")
+@NamedQuery(name = "RentalContract2.findByCustomerAddress", query = "SELECT rc " +
+                                                                    "FROM RentalContract2 rc " +
+                                                                    "JOIN Customer5 AS cus ON rc.customer = cus.id " +
+                                                                    "WHERE address = ?1")
+@ToString
 public class RentalContract2 {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
@@ -15,8 +22,20 @@ public class RentalContract2 {
     @ManyToOne
     @JoinColumn(name = "car")
     private Car5 car;
+    @Column(name = "contract_start_date")
     private Integer startDate;
+    @Column(name = "contract_end_date")
     private Integer endDate;
+
+    public RentalContract2() {
+    }
+
+    public RentalContract2(Customer5 customer, Car5 car, Integer startDate, Integer endDate) {
+        this.customer = customer;
+        this.car = car;
+        this.startDate = startDate;
+        this.endDate = endDate;
+    }
 
     public Integer getId() {
         return id;
@@ -81,4 +100,6 @@ public class RentalContract2 {
         result = 31 * result + (endDate != null ? endDate.hashCode() : 0);
         return result;
     }
+
+
 }

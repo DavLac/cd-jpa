@@ -79,9 +79,9 @@
     </persistence-unit>
     <persistence-unit name="assignment-08">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-        <class>com.example.jpa.assignment.assignment08.Car</class>
-        <class>com.example.jpa.assignment.assignment08.Customer</class>
-        <class>com.example.jpa.assignment.assignment08.RentalContract</class>
+        <class>com.example.jpa.assignment.assignment08.Car5</class>
+        <class>com.example.jpa.assignment.assignment08.Customer5</class>
+        <class>com.example.jpa.assignment.assignment08.RentalContract2</class>
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
         <properties>
             <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
@@ -93,7 +93,7 @@
     </persistence-unit>
     <persistence-unit name="assignment-09">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-        <class>com.example.jpa.assignment.assignment09.Car</class>
+        <class>com.example.jpa.assignment.assignment09.Car6</class>
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
         <properties>
             <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
