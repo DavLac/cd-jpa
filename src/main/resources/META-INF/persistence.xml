@@ -104,6 +104,7 @@
     <persistence-unit name="assignment-09">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         <class>com.example.jpa.solution.assignment09.Car6</class>
+        <class>com.example.jpa.solution.assignment09.demo.Cus</class>
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
         <properties>
             <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>

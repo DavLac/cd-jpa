@@ -7,6 +7,8 @@ import com.example.jpa.solution.assignment06.Assignment06;
 import com.example.jpa.solution.assignment07.Assignment07;
 import com.example.jpa.solution.assignment08.Assignment08;
 import com.example.jpa.solution.assignment08.demo.Assignment08Demo;
+import com.example.jpa.solution.assignment09.Assignment09;
+import com.example.jpa.solution.assignment09.demo.Assignment09Demo;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -109,6 +111,17 @@ public class JpaApplication {
         System.out.println("===========================");
         System.out.println("findAllPeopleThatRentedAtLeastTwoDifferentCars");
         as08.findAllPeopleThatRentedAtLeastTwoDifferentCars().forEach(System.out::println);
+
+        System.out.println("===========================");
+        System.out.println("Assignment 09 demo");
+        var as09d = new Assignment09Demo();
+        as09d.persistNewEntities();
+
+        System.out.println("===========================");
+        System.out.println("Assignment 09");
+        var as09 = new Assignment09();
+        as09.persistNewEntities();
+        as09.findAll().forEach(System.out::println);
     }
 
 }
