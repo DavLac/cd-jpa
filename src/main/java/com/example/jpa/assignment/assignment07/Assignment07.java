@@ -16,13 +16,13 @@ public class Assignment07 {
             .createEntityManager();
 
     public List<PrivateCustomer> findAllPrivateCustomers() {
-        final var query = entityManager.createQuery("SELECT c FROM nl.yoink.courses.dev.java.jpa.assignments.assignment07.PrivateCustomer c", PrivateCustomer.class);
+        final var query = entityManager.createQuery("SELECT c FROM PrivateCustomer c", PrivateCustomer.class);
 
         return query.getResultList();
     }
 
     public List<CompanyCustomer> findAllCompanyCustomers() {
-        final var query = entityManager.createQuery("SELECT c FROM nl.yoink.courses.dev.java.jpa.assignments.assignment07.CompanyCustomer c", CompanyCustomer.class);
+        final var query = entityManager.createQuery("SELECT c FROM CompanyCustomer c", CompanyCustomer.class);
 
         return query.getResultList();
     }
