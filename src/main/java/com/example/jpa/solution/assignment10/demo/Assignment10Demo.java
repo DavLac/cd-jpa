@@ -24,7 +24,7 @@ public class Assignment10Demo {
 
     public final List<MyUser> entityList = List.of(
             new MyUser(1L, "myName", List.of("note1", "note2")),
-            new MyUser(null, "m", List.of())
+            new MyUser(null, "m", List.of(""))
     );
 
     public final List<MyUser2> entityList2 = List.of(
