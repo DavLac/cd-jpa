@@ -9,6 +9,11 @@ import java.util.stream.Collectors;
 
 /**
  * Assignment 10: Bean Validation
+ * Annotate the Customer class correctly so that the following validations are correctly performed:
+ *
+ * • name should be between 2 and 45 characters
+ * • age should be between 18 and 150
+ * • email field should be valid
  **/
 public class Assignment10 {
     final static ValidatorFactory validatorFactory = Validation.buildDefaultValidatorFactory();

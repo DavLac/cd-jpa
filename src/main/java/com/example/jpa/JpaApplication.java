@@ -9,6 +9,7 @@ import com.example.jpa.solution.assignment08.Assignment08;
 import com.example.jpa.solution.assignment08.demo.Assignment08Demo;
 import com.example.jpa.solution.assignment09.Assignment09;
 import com.example.jpa.solution.assignment09.demo.Assignment09Demo;
+import com.example.jpa.solution.assignment10.demo.Assignment10Demo;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -122,6 +123,11 @@ public class JpaApplication {
         var as09 = new Assignment09();
         as09.persistNewEntities();
         as09.findAll().forEach(System.out::println);
+
+        System.out.println("===========================");
+        System.out.println("Assignment 10 demo");
+        var as10d = new Assignment10Demo();
+        as10d.entityList.forEach(e -> as10d.validateMyUser(e).forEach(System.out::println));
     }
 
 }
