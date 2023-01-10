@@ -1,4 +1,4 @@
-package com.example.jpa.solution.assignment03.demo;
+package com.example.jpa.solution.assignment05.demo;
 
 import org.hibernate.annotations.Where;
 

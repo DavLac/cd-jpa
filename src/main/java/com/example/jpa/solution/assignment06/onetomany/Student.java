@@ -1,4 +1,4 @@
-package com.example.jpa.solution.assignment02.onetomany;
+package com.example.jpa.solution.assignment06.onetomany;
 
 import javax.persistence.*;
 

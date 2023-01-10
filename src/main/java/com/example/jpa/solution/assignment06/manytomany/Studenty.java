@@ -1,4 +1,4 @@
-package com.example.jpa.solution.assignment02.manytomany;
+package com.example.jpa.solution.assignment06.manytomany;
 
 import javax.persistence.*;
 import java.util.ArrayList;

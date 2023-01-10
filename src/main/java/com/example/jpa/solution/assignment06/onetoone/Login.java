@@ -1,4 +1,4 @@
-package com.example.jpa.solution.assignment02.onetoone;
+package com.example.jpa.solution.assignment06.onetoone;
 
 import javax.persistence.*;
 

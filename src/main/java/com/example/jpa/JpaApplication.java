@@ -3,6 +3,7 @@ package com.example.jpa;
 import com.example.jpa.solution.assignment03.Assignment03;
 import com.example.jpa.solution.assignment04.Assignment04;
 import com.example.jpa.solution.assignment05.Assignment05;
+import com.example.jpa.solution.assignment05.demo.Assignment05Demo;
 import com.example.jpa.solution.assignment06.Assignment06;
 import com.example.jpa.solution.assignment07.Assignment07;
 import com.example.jpa.solution.assignment08.Assignment08;
@@ -65,12 +66,15 @@ public class JpaApplication {
         as05.findAll().forEach(entity -> System.out.println(entity.toString()));
 
         System.out.println("===========================");
+        System.out.println("Assignment 05 demo");
+        var as05d = new Assignment05Demo();
+        System.out.println("===========================");
         System.out.println("Formula - Beers");
-        as03.persistBeer();
-        System.out.println(as03.getBeerById(1));
+        as05d.persistBeer();
+        System.out.println(as05d.getBeerById(1));
         System.out.println("===========================");
         System.out.println("Where - Employees");
-        as03.persistAndGetEmployee();
+        as05d.persistAndGetEmployee();
 
         System.out.println("===========================");
         System.out.println("Assignment 06");
@@ -80,7 +84,7 @@ public class JpaApplication {
         System.out.println("Rental contracts");
         as06.findAllRentalContracts().forEach(System.out::println);
 
-        /*System.out.println("===========================");
+        System.out.println("===========================");
         System.out.println("Assignment 07");
         var as07 = new Assignment07();
         as07.persistNewEntities();
@@ -132,7 +136,7 @@ public class JpaApplication {
         as10d.persistNewEntities();
         System.out.println("===========================");
         System.out.println("Validate entity");
-        as10d.entityList.forEach(e -> as10d.validateMyUser(e).forEach(System.out::println));*/
+        as10d.entityList.forEach(e -> as10d.validateMyUser(e).forEach(System.out::println));
     }
 
 }

@@ -1,7 +1,7 @@
 package com.example.jpa.solution.assignment03;
 
-import com.example.jpa.solution.assignment03.demo.Beer;
-import com.example.jpa.solution.assignment03.demo.Employee;
+import com.example.jpa.solution.assignment05.demo.Beer;
+import com.example.jpa.solution.assignment05.demo.Employee;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -18,38 +18,6 @@ public class Assignment03 {
 
     private static final EntityManager entityManager = entityManagerFactory
             .createEntityManager();
-
-    public void persistBeer() {
-        entityManager.getTransaction().begin();
-        entityManager.persist(new Beer(10L, 200L));
-        entityManager.getTransaction().commit();
-    }
-
-    public void persistAndGetEmployee() {
-        entityManager.getTransaction().begin();
-        entityManager.persist(new Employee(true, "address 1"));
-        entityManager.persist(new Employee(false, "address 2"));
-        entityManager.persist(new Employee(true, "address 3"));
-        entityManager.persist(new Employee(false, "address 4"));
-        findAllEmployees().forEach(System.out::println);
-        entityManager.getTransaction().commit();
-    }
-
-    public Beer getBeerById(final Integer id) {
-        final var query = entityManager.createQuery("SELECT c FROM Beer c WHERE c.id = :id", Beer.class);
-
-        Beer response = query
-                .setParameter("id", id)
-                .getSingleResult();
-        entityManager.refresh(response);
-        return response;
-    }
-
-    public List<Employee> findAllEmployees() {
-        final var query = entityManager.createQuery("SELECT c FROM Employee c", Employee.class);
-
-        return query.getResultList();
-    }
 
     private final List<Customer2> customer2List = List.of(
             new Customer2("paul", 25),
