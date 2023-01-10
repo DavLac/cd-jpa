@@ -30,20 +30,11 @@ public class Assignment08 {
             new Customer5("gabriel", "Utrecht")
     );
 
-    private Car5 getCarById(final Integer id) {
-        final var query = entityManager.createQuery("SELECT c FROM Car5 c WHERE c.id = :id", Car5.class);
+    private <T> T getEntityById(final Integer id, Class<T> clazz) {
+        final var query = entityManager
+                .createQuery("SELECT c FROM " + clazz.getName() + " c WHERE c.id = :id", clazz);
 
-        Car5 response = query
-                .setParameter("id", id)
-                .getSingleResult();
-        entityManager.refresh(response);
-        return response;
-    }
-
-    private Customer5 getCustomerById(final Integer id) {
-        final var query = entityManager.createQuery("SELECT c FROM Customer5 c WHERE c.id = :id", Customer5.class);
-
-        Customer5 response = query
+        T response = query
                 .setParameter("id", id)
                 .getSingleResult();
         entityManager.refresh(response);
@@ -55,13 +46,11 @@ public class Assignment08 {
         entityList.forEach(entityManager::persist);
         customerList.forEach(entityManager::persist);
 
-        System.out.println(getCustomerById(1));
-        System.out.println(getCarById(1));
         var rentalContract = List.of(
-                new RentalContract2(getCustomerById(1), getCarById(1), 1000, 2000),
-                new RentalContract2(getCustomerById(1), getCarById(2), 2000, 3000),
-                new RentalContract2(getCustomerById(3), getCarById(3), 3000, 4000),
-                new RentalContract2(getCustomerById(4), getCarById(4), 4000, 5000)
+                new RentalContract2(getEntityById(1, Customer5.class), getEntityById(1, Car5.class), 1000, 2000),
+                new RentalContract2(getEntityById(1, Customer5.class), getEntityById(2, Car5.class), 2000, 3000),
+                new RentalContract2(getEntityById(3, Customer5.class), getEntityById(3, Car5.class), 3000, 4000),
+                new RentalContract2(getEntityById(4, Customer5.class), getEntityById(4, Car5.class), 4000, 5000)
         );
 
         rentalContract.forEach(entityManager::persist);
