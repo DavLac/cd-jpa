@@ -8,7 +8,6 @@ import java.util.Objects;
 
 @Entity
 @Table(name="company_customer")
-@DiscriminatorValue("SoftwareEngineer")
 public class CompanyCustomer extends Customer4 {
     @Column(name="vat_number")
     private Long vatNumber;

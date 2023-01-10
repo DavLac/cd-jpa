@@ -8,7 +8,6 @@ import java.util.Objects;
 
 @Entity
 @Table(name="private_customer")
-@DiscriminatorValue("ProductOwner")
 public class PrivateCustomer extends Customer4 {
     @Column(name="driver_licence_number")
     private Integer driverLicenceNumber;

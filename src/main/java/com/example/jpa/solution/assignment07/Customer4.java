@@ -3,8 +3,7 @@ package com.example.jpa.solution.assignment07;
 import javax.persistence.*;
 
 @Entity
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name="role", discriminatorType = DiscriminatorType.STRING)
+@Inheritance(strategy = InheritanceType.JOINED)
 public class Customer4 {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
