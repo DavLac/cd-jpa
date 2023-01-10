@@ -9,7 +9,9 @@ import com.example.jpa.solution.assignment07.Assignment07;
 import com.example.jpa.solution.assignment08.Assignment08;
 import com.example.jpa.solution.assignment08.demo.Assignment08Demo;
 import com.example.jpa.solution.assignment09.Assignment09;
+import com.example.jpa.solution.assignment09.Car6;
 import com.example.jpa.solution.assignment09.demo.Assignment09Demo;
+import com.example.jpa.solution.assignment10.Assignment10;
 import com.example.jpa.solution.assignment10.demo.Assignment10Demo;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -126,7 +128,10 @@ public class JpaApplication {
         System.out.println("Assignment 09");
         var as09 = new Assignment09();
         as09.persistNewEntities();
-        as09.findAll().forEach(System.out::println);
+        as09.getEntityById(1, Car6.class);
+        as09.getEntityById(2, Car6.class);
+        as09.getEntityById(3, Car6.class);
+        as09.getEntityById(4, Car6.class);
 
         System.out.println("===========================");
         System.out.println("Assignment 10 demo");
@@ -137,6 +142,11 @@ public class JpaApplication {
         System.out.println("===========================");
         System.out.println("Validate entity");
         as10d.entityList.forEach(e -> as10d.validateMyUser(e).forEach(System.out::println));
+
+        System.out.println("===========================");
+        System.out.println("Assignment 10");
+        var as10 = new Assignment10();
+        as10.entityList.forEach(e -> as10.validateCustomer(e).forEach(System.out::println));
     }
 
 }

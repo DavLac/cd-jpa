@@ -1,5 +1,7 @@
 package com.example.jpa.solution.assignment10;
 
+import com.example.jpa.solution.assignment10.demo.MyUser;
+
 import javax.validation.ConstraintViolation;
 import javax.validation.Validation;
 import javax.validation.Validator;
@@ -19,6 +21,10 @@ public class Assignment10 {
     final static ValidatorFactory validatorFactory = Validation.buildDefaultValidatorFactory();
     final static Validator validator = validatorFactory.getValidator();
 
+    public final List<Customer7> entityList = List.of(
+            new Customer7(1, "bob", 25, "bob.moran@google.com"),
+            new Customer7(null, "m", 17, "google.com")
+    );
 
     public List<String> validateCustomer(final Customer7 customer) {
         final var constraintViolations = validator.validate(customer);

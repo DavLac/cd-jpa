@@ -28,9 +28,14 @@ public class Assignment09 {
         entityManager.getTransaction().commit();
     }
 
-    public List<Car6> findAll() {
-        final var query = entityManager.createQuery("SELECT c FROM Car6 c", Car6.class);
+    public <T> T getEntityById(final Integer id, Class<T> clazz) {
+        final var query = entityManager
+                .createQuery("SELECT c FROM " + clazz.getName() + " c WHERE c.id = :id", clazz);
 
-        return query.getResultList();
+        T response = query
+                .setParameter("id", id)
+                .getSingleResult();
+        entityManager.refresh(response);
+        return response;
     }
 }
