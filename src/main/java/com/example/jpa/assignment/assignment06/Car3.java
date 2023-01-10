@@ -1,21 +1,44 @@
 package com.example.jpa.assignment.assignment06;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
 public class Car3 {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
+    @Column(name = "id")
     private Integer id;
+    @Basic
+    @Column(name = "make")
     private String make;
+    @Basic
+    @Column(name = "model")
     private String model;
+    @Basic
+    @Column(name = "mileage")
     private Integer mileage;
+    @Basic
+    @Column(name = "value")
     private Integer value;
-    private Integer lastCleaned;
+    @Basic
+    @Column(name = "last_cleaned")
+    private Long lastCleaned;
+    @OneToMany(mappedBy = "car3")
+    private List<RentalContract> rentalContractList = new ArrayList<>();
+
+    public Car3(String make, String model, Integer mileage, Integer value, Long lastCleaned) {
+        this.make = make;
+        this.model = model;
+        this.mileage = mileage;
+        this.value = value;
+        this.lastCleaned = lastCleaned;
+    }
+
+    public Car3() {
+    }
 
     public Integer getId() {
         return id;
@@ -57,11 +80,11 @@ public class Car3 {
         this.value = value;
     }
 
-    public Integer getLastCleaned() {
+    public Long getLastCleaned() {
         return lastCleaned;
     }
 
-    public void setLastCleaned(final Integer lastCleaned) {
+    public void setLastCleaned(final Long lastCleaned) {
         this.lastCleaned = lastCleaned;
     }
 
@@ -89,5 +112,17 @@ public class Car3 {
         result = 31 * result + (value != null ? value.hashCode() : 0);
         result = 31 * result + (lastCleaned != null ? lastCleaned.hashCode() : 0);
         return result;
+    }
+
+    @Override
+    public String toString() {
+        return "Car3{" +
+                "id=" + id +
+                ", make='" + make + '\'' +
+                ", model='" + model + '\'' +
+                ", mileage=" + mileage +
+                ", value=" + value +
+                ", lastCleaned=" + lastCleaned +
+                '}';
     }
 }

@@ -15,16 +15,30 @@ public class Assignment05 {
             .createEntityManagerFactory("assignment-05");
     private static final EntityManager entityManager = entityManagerFactory
             .createEntityManager();
+    private List<Car2> carList = List.of(
+            new Car2("Ford", "Focus", 937, 460, 560L),
+            new Car2("Volkswagen", "Golf", 480, 358, 295L),
+            new Car2("Tesla", "S", 395, 894, 823L)
+    );
+
+    public void persistNewCars() {
+        carList.forEach(c -> {
+            entityManager.getTransaction().begin();
+            entityManager.persist(c);
+            entityManager.getTransaction().commit();
+        });
+    }
 
     public List<Car2> findAll() {
-        final var query = entityManager.createQuery("SELECT c FROM nl.yoink.courses.dev.java.jpa.assignments.assignment05.Car2 c", Car2.class);
+        final var query = entityManager.createQuery("SELECT c FROM Car2 c", Car2.class);
 
         return query.getResultList();
     }
 
     public int deleteById(final Integer id) {
         entityManager.getTransaction().begin();
-        final var query = entityManager.createQuery("<ADD YOUR OWN QUERY HERE>");
+        final var query = entityManager.createQuery("DELETE FROM Car2 where id = :id")
+                .setParameter("id", id);
 
         final var result = query.executeUpdate();
         entityManager.flush();

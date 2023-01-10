@@ -11,6 +11,14 @@ public class Customer2 {
     private String name;
     private Integer age;
 
+    public Customer2() {
+    }
+
+    public Customer2(String name, Integer age) {
+        this.name = name;
+        this.age = age;
+    }
+
     public Integer getId() {
         return id;
     }
@@ -53,5 +61,14 @@ public class Customer2 {
         result = 31 * result + (name != null ? name.hashCode() : 0);
         result = 31 * result + (age != null ? age.hashCode() : 0);
         return result;
+    }
+
+    @Override
+    public String toString() {
+        return "Customer2{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                '}';
     }
 }

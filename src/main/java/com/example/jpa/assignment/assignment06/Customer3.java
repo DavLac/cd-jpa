@@ -1,9 +1,8 @@
 package com.example.jpa.assignment.assignment06;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -12,6 +11,15 @@ public class Customer3 {
     @Id
     private Integer id;
     private String name;
+    @OneToMany(mappedBy = "customer3")
+    private List<RentalContract> rentalContractList = new ArrayList<>();
+
+    public Customer3() {
+    }
+
+    public Customer3(String name) {
+        this.name = name;
+    }
 
     public Integer getId() {
         return id;
@@ -45,5 +53,13 @@ public class Customer3 {
         int result = id != null ? id.hashCode() : 0;
         result = 31 * result + (name != null ? name.hashCode() : 0);
         return result;
+    }
+
+    @Override
+    public String toString() {
+        return "Customer3{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                '}';
     }
 }
