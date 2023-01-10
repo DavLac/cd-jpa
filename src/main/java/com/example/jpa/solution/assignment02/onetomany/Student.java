@@ -13,6 +13,6 @@ public class Student {
     private String name;
 
     @ManyToOne
-    @JoinColumn(name = "school_id", nullable = false) // owning side
+    @JoinColumn(name = "school_id", nullable = false, foreignKey=@ForeignKey(name = "Fk_school")) // owning side
     private School school;
 }

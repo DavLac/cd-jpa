@@ -11,11 +11,11 @@ public class RentalContract {
     private Integer id;
 
     @ManyToOne
-    @JoinColumn(name = "customer3_id", nullable = false) // owning side
+    @JoinColumn(name = "customer3_id", nullable = false, foreignKey=@ForeignKey(name = "Fk_rentalcontract_customer3")) // owning side
     private Customer3 customer3;
 
     @ManyToOne
-    @JoinColumn(name = "car3_id", nullable = false) // owning side
+    @JoinColumn(name = "car3_id", nullable = false, foreignKey=@ForeignKey(name = "Fk_rentalcontract_car3")) // owning side
     private Car3 car3;
     @Column(name = "contract_start_date")
     private Integer startDate;

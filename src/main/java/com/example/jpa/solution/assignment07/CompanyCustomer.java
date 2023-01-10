@@ -1,12 +1,14 @@
 package com.example.jpa.solution.assignment07;
 
 import javax.persistence.Column;
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import java.util.Objects;
 
 @Entity
 @Table(name="company_customer")
+@DiscriminatorValue("SoftwareEngineer")
 public class CompanyCustomer extends Customer4 {
     @Column(name="vat_number")
     private Long vatNumber;

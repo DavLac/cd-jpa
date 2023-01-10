@@ -29,20 +29,11 @@ public class Assignment06 {
             new Customer3("gabriel")
     );
 
-    private Car3 getCarById(final Integer id) {
-        final var query = entityManager.createQuery("SELECT c FROM Car3 c WHERE c.id = :id", Car3.class);
+    private <T> T getEntityById(final Integer id, Class<T> clazz) {
+        final var query = entityManager
+                .createQuery("SELECT c FROM " + clazz.getName() + " c WHERE c.id = :id", clazz);
 
-        Car3 response = query
-                .setParameter("id", id)
-                .getSingleResult();
-        entityManager.refresh(response);
-        return response;
-    }
-
-    private Customer3 getCustomerById(final Integer id) {
-        final var query = entityManager.createQuery("SELECT c FROM Customer3 c WHERE c.id = :id", Customer3.class);
-
-        Customer3 response = query
+        T response = query
                 .setParameter("id", id)
                 .getSingleResult();
         entityManager.refresh(response);
@@ -54,10 +45,8 @@ public class Assignment06 {
         entityList.forEach(entityManager::persist);
         customerList.forEach(entityManager::persist);
 
-        System.out.println(getCustomerById(1));
-        System.out.println(getCarById(1));
         var rentalContract = List.of(
-                new RentalContract(getCustomerById(1), getCarById(1), 1, 2)
+                new RentalContract(getEntityById(1, Customer3.class), getEntityById(1, Car3.class), 1000, 2000)
         );
 
         rentalContract.forEach(entityManager::persist);

@@ -80,7 +80,7 @@ public class JpaApplication {
         System.out.println("Rental contracts");
         as06.findAllRentalContracts().forEach(System.out::println);
 
-        System.out.println("===========================");
+        /*System.out.println("===========================");
         System.out.println("Assignment 07");
         var as07 = new Assignment07();
         as07.persistNewEntities();
@@ -127,7 +127,12 @@ public class JpaApplication {
         System.out.println("===========================");
         System.out.println("Assignment 10 demo");
         var as10d = new Assignment10Demo();
-        as10d.entityList.forEach(e -> as10d.validateMyUser(e).forEach(System.out::println));
+        System.out.println("===========================");
+        System.out.println("Persist with error");
+        as10d.persistNewEntities();
+        System.out.println("===========================");
+        System.out.println("Validate entity");
+        as10d.entityList.forEach(e -> as10d.validateMyUser(e).forEach(System.out::println));*/
     }
 
 }
